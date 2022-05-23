@@ -1,0 +1,87 @@
+Prep-Excerise
+ solution -1
+let rotations = 0;
+while (rotations < 2) {
+  const currentState = trafficLight.state;
+
+  if (currentState === "green") {
+    trafficLight.state = "orange";
+  } else if (currentState === "orange") {
+    trafficLight.state = "red";
+  } else {
+    trafficLight.state = "green";
+    rotations++;
+  }
+solution-2
+  switch (currentState) {
+    case "green":
+      trafficLight.state = "orange";
+      break;
+    case "orange":
+      trafficLight.state = "red";
+      break;
+
+    case "red":
+      trafficLight.state = "green";
+      rotations++;
+      break;
+  }
+
+  console.log("The traffic light is on ", currentState);
+}
+
+solution -1
+const trafficLight = {
+  possibleStates: ["green", "orange", "red"],
+  stateIndex: 0,
+};
+
+let cycle = 0;
+while (cycle < 2) {
+  const currentState = trafficLight.possibleStates[trafficLight.stateIndex];
+  switch (currentState) {
+    case "green":
+      trafficLight.stateIndex = 1;
+      break;
+
+    case "orange":
+      trafficLight.stateIndex = 2;
+      break;
+
+    case "red":
+      trafficLight.stateIndex = 0;
+      cycle++;
+      break;
+  }
+
+  console.log("The traffic light is on", currentState);
+
+}
+Excerise -2
+solution-2
+
+const trafficLight = {
+    possibleStates: ["green", "orange", "red"],
+    stateIndex: 0, 
+  };
+  
+  let cycle = 0;
+  while (cycle < 2) {
+   
+    const currentState = trafficLight.possibleStates[trafficLight.stateIndex];
+  
+    if(trafficLight.stateIndex === 0) {
+      trafficLight.stateIndex = 1
+    } else if(trafficLight.stateIndex === 1) {
+      trafficLight.stateIndex = 2
+    } else if(trafficLight.stateIndex === 2) {
+      trafficLight.stateIndex = 0
+      cycle++
+    }
+  
+    console.log("The traffic light is on", currentState);
+  
+    
+  }
+  
+  
